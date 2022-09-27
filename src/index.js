@@ -160,7 +160,3 @@ const filtrarEmployees = (id) => {
 }
 //////*APIs for educational porpouses*//////
 
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
