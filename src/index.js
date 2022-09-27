@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require('express')
 const mongoose = require('mongoose')
 const filesystem = require('fs')
@@ -19,8 +18,8 @@ app.use(router);
 mongoose.connect(process.env.DATABASE_URL)
   .then(() => {
     console.log("🟢 DB Connected");
-    app.listen({ port: process.env.PORT }, () => {
-      console.log(`🚗 Server running on port ${process.env.PORT}`);
+    app.listen({ port: port }, () => {
+      console.log(`🚗 Server running on port ${port}`);
     });
   })
   .catch((err) => {
