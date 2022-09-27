@@ -9,13 +9,14 @@ const { json } = require('express')
 const { exit } = require('process')
 const app = express()
 const port = 3000
+DATABASE_URL='mongodb+srv://FranBondino:mcga@cluster0.nyvyd3p.mongodb.net/?retryWrites=true&w=majority'
 const router = require("./routes");
 
 app.use(express.json());
 app.use(express.static("public"));
 app.use(router);
 
-mongoose.connect(process.env.DATABASE_URL)
+mongoose.connect(DATABASE_URL)
   .then(() => {
     console.log("🟢 DB Connected");
     app.listen({ port: port }, () => {
